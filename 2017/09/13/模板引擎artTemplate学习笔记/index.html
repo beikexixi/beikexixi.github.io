@@ -1,0 +1,736 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="artTemplate," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = html;   缺点：当需要大量字符串拼接时容易出错  2.添加节点123var node =">
+<meta name="keywords" content="artTemplate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模板引擎artTemplate学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/模板引擎artTemplate学习笔记/index.html">
+<meta property="og:site_name" content="西瓜古古🍉">
+<meta property="og:description" content="一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = html;   缺点：当需要大量字符串拼接时容易出错  2.添加节点123var node =">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-13T07:01:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模板引擎artTemplate学习笔记">
+<meta name="twitter:description" content="一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = html;   缺点：当需要大量字符串拼接时容易出错  2.添加节点123var node =">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 模板引擎artTemplate学习笔记 | 西瓜古古🍉 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西瓜古古🍉</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                模板引擎artTemplate学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-13T15:01:39+08:00" content="2017-09-13">
+              2017-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、为什么需要artTemplate"><a href="#一、为什么需要artTemplate" class="headerlink" title="一、为什么需要artTemplate"></a>一、为什么需要artTemplate</h2><p>页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法</p>
+<ul>
+<li>1.字符串拼接<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> html = <span class="string">"&lt;div class=box&gt;盒子&lt;/div&gt;"</span>;</div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"body"</span>).innerHTML = html;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>缺点：当需要大量字符串拼接时容易出错</p>
+<ul>
+<li>2.添加节点<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> node = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div><div class="line">node.innerHTML = <span class="string">"盒子"</span>;</div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"body"</span>).appendChild(node);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>缺点：大量操作DOM，不利于性能优化</p>
+<ul>
+<li>3.模板引擎(自用artTemplate)<br> 若ajax传回来的数据data中有属性name=”盒子”<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/html&quot; id=&quot;id-name&quot;&gt;</div><div class="line">    &lt;div&gt;data.name&lt;/div&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>优点：使用模板引擎渲染页面更快</p>
+<h2 id="artTemplate特性–摘自artTemplate官网"><a href="#artTemplate特性–摘自artTemplate官网" class="headerlink" title="artTemplate特性–摘自artTemplate官网"></a>artTemplate特性–摘自artTemplate官网</h2><ol>
+<li>性能卓越，执行速度通常是 Mustache 与 tmpl 的 20 多倍（性能测试）</li>
+<li>支持运行时调试，可精确定位异常模板所在语句（演示）</li>
+<li>对 NodeJS Express 友好支持</li>
+<li>安全，默认对输出进行转义、在沙箱中运行编译后的代码（Node版本可以安全执行用户上传的模板）</li>
+<li>支持include语句</li>
+<li>可在浏览器端实现按路径加载模板（详情）</li>
+<li>支持预编译，可将模板转换成为非常精简的 js 文件</li>
+<li>模板语句简洁，无需前缀引用数据，有简洁版本与原生语法版本可选</li>
+<li>支持所有流行的浏览器</li>
+</ol>
+<h2 id="二、artTemplate的模板语法分类"><a href="#二、artTemplate的模板语法分类" class="headerlink" title="二、artTemplate的模板语法分类"></a>二、artTemplate的模板语法分类</h2><ul>
+<li><p>简洁语法<br>  引包-template.js</p>
+</li>
+<li><p>原生语法(自用)<br>  引包-template-native.js</p>
+<p>  自用原生语法，因为可以直接书写js原生代码</p>
+<h2 id="三、方法"><a href="#三、方法" class="headerlink" title="三、方法"></a>三、方法</h2><ul>
+<li>template(id, data)<br>  根据 id 渲染模板。内部会根据document.getElementById(id)查找模板。<br>  如果没有 data 参数，那么将返回一渲染函数。</li>
+<li><p>template.helper(name, callback)<br>  添加辅助方法。可以将全局变量传入模板以便使用。<br> -示例如下,为了能够使用jQuery等全局变量需要如下代码</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    /*帮助申明一个模版内能使用的函数*/</div><div class="line">    template.helper(&apos;get&apos;,function () &#123;</div><div class="line">        return &#123;</div><div class="line">            $:jQuery,</div><div class="line">            console:console,</div><div class="line">            Math: window.Math</div><div class="line">        &#125;;</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>template.compile(source, options)<br>  将返回一个渲染函数。</p>
+</li>
+<li><p>template.render(source, options)<br>  将返回渲染结果。</p>
+</li>
+<li><p>template.config(name, value)<br>更改引擎的默认配置。</p>
+<h2 id="四、使用小结"><a href="#四、使用小结" class="headerlink" title="四、使用小结"></a>四、使用小结</h2></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>data必须是对象<br>模板传入的数据必须是对象，遍历的时候只能遍历data中的属性 </p>
+</li>
+<li><p>模版输出语法 </p>
+<ol>
+<li><p>模板逻辑输出  &lt;%   %&gt;<br>-示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;% for(var i=0; i&lt; data.length; i++) &#123; %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>输出变量  &lt;%=  %&gt;<br>-示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= data.name %&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>输出编码后数据<br>-示例,说明：若后端传回的数据类似</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;&lt;img src=&apos;http:www.baidu.com/666&apos; alt=&apos;picture&apos;&gt;&quot;,</div></pre></td></tr></table></figure>
+<p>可以使用如下输出语法，可以将其在html文件中编译为img标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%=# data.img %&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><strong style="color:red">js语法不能用在模版内     变量 函数 分支循环</strong><br>解决方法:使用辅助函数 帮助申明一个模版内能使用的函数<br>借助template.helper()</p>
+</li>
+</ul>
+<h2 id="四、常用使用实例"><a href="#四、常用使用实例" class="headerlink" title="四、常用使用实例"></a>四、常用使用实例</h2><h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><ul>
+<li><p>功能简介：往某个div中动态添加从后端传输回来的数据</p>
+<ul>
+<li><p>返回数据data假设如下：{name: “盒子”}</p>
+</li>
+<li><p>最终实现效果为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"outer"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>采用ajax进行异步数据交互</p>
+</li>
+</ul>
+</li>
+<li><p>具体实现代码</p>
+<ul>
+<li><p>html代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"outer"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>js代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    url: <span class="string">"后端入口地址"</span>,</div><div class="line">    type: <span class="string">"文件传输方式,取值为get或post"</span>,</div><div class="line">    dataType: <span class="string">"数据返回格式json,其他取值可为xml等"</span>,</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="comment">// 成功执行函数</span></div><div class="line">      $(<span class="string">"#outer"</span>).html(template(<span class="string">"newBox"</span>,data));</div><div class="line">    &#125;,</div><div class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">     <span class="comment">// 失败执行函数</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>html文件中的模板如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/html&quot; id=&quot;newBox&quot;&gt;</div><div class="line">    &lt;div&gt;data.name&lt;/div&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h3><ul>
+<li>功能简介：依据后端传回来的数据动态生成制定数目的option标签</li>
+<li>具体实现代码<ul>
+<li>模板代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/html&quot; id=&quot;pages&quot;&gt;</div><div class="line">    &lt;%</div><div class="line">        var getCeil = function(num1,num2)&#123;</div><div class="line">            return num1/num2;</div><div class="line">        &#125;</div><div class="line">    %&gt;</div><div class="line">    &lt;select name=&quot;products-page&quot; id=&quot;page-num&quot;&gt;</div><div class="line">        &lt;% for(var i=0 ;i &lt; getCeil(totalCount,pagesize); i ++) &#123; %&gt;</div><div class="line">        &lt;option value=&quot;&lt;%= (i+1) %&gt;&quot;&gt;&lt;%= (i+1) %&gt;/&lt;%= getCeil(totalCount,pagesize) %&gt;&lt;/option&gt;</div><div class="line">        &lt;% &#125; %&gt;</div><div class="line">    &lt;/select&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="案例3"><a href="#案例3" class="headerlink" title="案例3"></a>案例3</h3><ul>
+<li><p>具体实现代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/template&quot; id=&quot;template&quot;&gt;</div><div class="line">    &lt;% var $ = get().$; %&gt;</div><div class="line">    &lt;% $.each(list,function(i,item)&#123; %&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;&lt;%=i+1 %&gt;&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;img width=&quot;100&quot; src=&quot;&lt;%=item.url %&gt;&quot; alt=&quot;&quot;&gt;&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;%=#item.nowPrice %&gt;&lt;/td&gt;</div><div class="line">            &lt;% if(item.oldPrice &gt; 1000)&#123; %&gt;</div><div class="line">                &lt;td style=&quot;color: red&quot;&gt;&lt;%=item.oldPrice %&gt;&lt;/td&gt;</div><div class="line">            &lt;% &#125;else&#123; %&gt;</div><div class="line">                &lt;td&gt;&lt;%=item.oldPrice %&gt;&lt;/td&gt;</div><div class="line">            &lt;% &#125; %&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">    &lt;% &#125;); %&gt;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;js/template-native.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>说明<br>为了能够使用jQuery还需要如下代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    /*帮助申明一个模版内能使用的函数*/</div><div class="line">    template.helper(&apos;get&apos;,function () &#123;</div><div class="line">        return &#123;$:jQuery,console:console&#125;;</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/artTemplate/" rel="tag">#artTemplate</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/13/版本管理github和码云/" rel="next" title="利用github和码云进行代码管理">
+                <i class="fa fa-chevron-left"></i> 利用github和码云进行代码管理
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/13/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/23103K3MK.jpg"
+               alt="beikexixi" />
+          <p class="site-author-name" itemprop="name">beikexixi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、为什么需要artTemplate"><span class="nav-number">1.</span> <span class="nav-text">一、为什么需要artTemplate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#artTemplate特性–摘自artTemplate官网"><span class="nav-number">2.</span> <span class="nav-text">artTemplate特性–摘自artTemplate官网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、artTemplate的模板语法分类"><span class="nav-number">3.</span> <span class="nav-text">二、artTemplate的模板语法分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、方法"><span class="nav-number">4.</span> <span class="nav-text">三、方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、使用小结"><span class="nav-number">5.</span> <span class="nav-text">四、使用小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、常用使用实例"><span class="nav-number">6.</span> <span class="nav-text">四、常用使用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例1"><span class="nav-number">6.1.</span> <span class="nav-text">案例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例2"><span class="nav-number">6.2.</span> <span class="nav-text">案例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例3"><span class="nav-number">6.3.</span> <span class="nav-text">案例3</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">beikexixi</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

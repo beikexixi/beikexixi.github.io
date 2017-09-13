@@ -84,14 +84,17 @@
 
 
 
+<meta name="description" content="渐变 -webkit-gradient是background的一个属性值； 参数 webkit内核的safari、 Chrome的Linear Gradients (线性渐变) 基本语法：background-image:-webkit-gradient(type,x1 y1, x2 y2, from(开始颜色值),to(结束颜色值), [color-stop(偏移量小数,停靠颜色值),…] );">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习记录">
-<meta property="og:url" content="http://yoursite.com/2017/09/13/test/index.html">
+<meta property="og:title" content="CSS3-渐变">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/css3-渐变/index.html">
 <meta property="og:site_name" content="西瓜古古🍉">
+<meta property="og:description" content="渐变 -webkit-gradient是background的一个属性值； 参数 webkit内核的safari、 Chrome的Linear Gradients (线性渐变) 基本语法：background-image:-webkit-gradient(type,x1 y1, x2 y2, from(开始颜色值),to(结束颜色值), [color-stop(偏移量小数,停靠颜色值),…] );">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-13T09:57:54.000Z">
+<meta property="og:updated_time" content="2017-09-10T09:22:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习记录">
+<meta name="twitter:title" content="CSS3-渐变">
+<meta name="twitter:description" content="渐变 -webkit-gradient是background的一个属性值； 参数 webkit内核的safari、 Chrome的Linear Gradients (线性渐变) 基本语法：background-image:-webkit-gradient(type,x1 y1, x2 y2, from(开始颜色值),to(结束颜色值), [color-stop(偏移量小数,停靠颜色值),…] );">
 
 
 
@@ -109,7 +112,7 @@
   };
 </script>
 
-  <title> 学习记录 | 西瓜古古🍉 </title>
+  <title> CSS3-渐变 | 西瓜古古🍉 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +262,7 @@
             
             
               
-                学习记录
+                CSS3-渐变
               
             
           </h1>
@@ -271,8 +274,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-13T17:57:54+08:00" content="2017-09-13">
-              2017-09-13
+            <time itemprop="dateCreated" datetime="2017-09-10T17:22:05+08:00" content="2017-09-10">
+              2017-09-10
             </time>
           </span>
 
@@ -299,7 +302,23 @@
       
 
       
-        
+        <h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><ul>
+<li>-webkit-gradient是background的一个属性值；</li>
+<li>参数<ul>
+<li>webkit内核的safari、 Chrome的Linear Gradients (线性渐变) 基本语法：<br>background-image:-webkit-gradient(type,x1 y1, x2 y2, from(开始颜色值),to(结束颜色值), [color-stop(偏移量小数,停靠颜色值),…] );</li>
+</ul>
+</li>
+<li>参数介绍<ul>
+<li>webkit内核的Linear Gradients (线性渐变) 第一组参数type（类型）为 linear；</li>
+<li>第二组参数是,x1 y1, x2 y2,当成颜色渐变体的两个点的坐标就是。<br>x1,x2,y1,y2的取值范围为0%-100%，<br>当x1,x2,y1,y2取值为极值的时候，x1和x2可以取值left（或0%）或right（或100%）,y1和y2可以取值top（或0%）或bottom（或100%）；<ul>
+<li>tips：<br>当x1等于x2，y1不等于y2，实现垂直渐变，调整y1，y2的值可以调整渐变半径大小；<br>当y1等于y2，x1不等于x2，实现水平渐变，调整x1，x2的值可以调整渐变半径大小；<br>当y1不等于y2，x1不等于x2，实现角度渐变，当x1,x2,y1,y2取值为极值的时候接近垂直渐变或水平渐变；<br>当x1等于x2，y1等于y2，实现没有渐变，取from色，即“ from(颜色值) ”；<br>实现垂直渐变和水平渐变渐变时，x1和x2可以最简单的取值是left（或0%）或right（或100%）,<br>y1和y2可以最简单的取值是top（或0%）或bottom（或100%）；</li>
+</ul>
+</li>
+<li>from(开始颜色值),to(结束颜色值)是两个渐变颜色值；<br>[color-stop(偏移量&lt;小数&gt;,停靠颜色值),…]：可以使用多个color-stop，如果渐变只有2个颜色，那么可以不使用该参数；<br>偏移量必须为小数，如果偏移量&gt;=1,那么该color-stop相当于无效；</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -323,13 +342,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/09/10/正则表达式学习笔记/" rel="next" title="正则表达式学习笔记">
+                <i class="fa fa-chevron-left"></i> 正则表达式学习笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/12/前端学习相关网站/" rel="prev" title="前端学习相关网站">
+                前端学习相关网站 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -454,7 +477,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">1.</span> <span class="nav-text">渐变</span></a></li></ol></div>
             
           </div>
         </section>

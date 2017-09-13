@@ -1,0 +1,744 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="码云,github," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="环境配置搭建个人博客hexohexo 是一个静态博客生成器，能帮你一个命名生成一个网站。  安装 node 环境  123- nodejs.org 网站有 node 的下载链接- 下载得到安装包- 下一步下一步安装即可 确认机器上是或否有 node 环境： 打开 cmd： 1node -v  安装 git  https://git-scm.com/ 安装方式：直接下一步-&amp;gt;下一步 安装即可">
+<meta name="keywords" content="码云,github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用github和码云进行代码管理">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/版本管理github和码云/index.html">
+<meta property="og:site_name" content="西瓜古古🍉">
+<meta property="og:description" content="环境配置搭建个人博客hexohexo 是一个静态博客生成器，能帮你一个命名生成一个网站。  安装 node 环境  123- nodejs.org 网站有 node 的下载链接- 下载得到安装包- 下一步下一步安装即可 确认机器上是或否有 node 环境： 打开 cmd： 1node -v  安装 git  https://git-scm.com/ 安装方式：直接下一步-&amp;gt;下一步 安装即可">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-13T05:41:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用github和码云进行代码管理">
+<meta name="twitter:description" content="环境配置搭建个人博客hexohexo 是一个静态博客生成器，能帮你一个命名生成一个网站。  安装 node 环境  123- nodejs.org 网站有 node 的下载链接- 下载得到安装包- 下一步下一步安装即可 确认机器上是或否有 node 环境： 打开 cmd： 1node -v  安装 git  https://git-scm.com/ 安装方式：直接下一步-&amp;gt;下一步 安装即可">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 利用github和码云进行代码管理 | 西瓜古古🍉 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西瓜古古🍉</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                利用github和码云进行代码管理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-13T13:41:11+08:00" content="2017-09-13">
+              2017-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/代码管理/" itemprop="url" rel="index">
+                    <span itemprop="name">代码管理</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h2 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h2><h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><p>hexo 是一个静态博客生成器，能帮你一个命名生成一个网站。</p>
+<ol>
+<li>安装 node 环境</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- nodejs.org 网站有 node 的下载链接</div><div class="line">- 下载得到安装包</div><div class="line">- 下一步下一步安装即可</div></pre></td></tr></table></figure>
+<p>确认机器上是或否有 node 环境：</p>
+<p>打开 cmd：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure>
+<ol>
+<li>安装 git</li>
+</ol>
+<p><a href="https://git-scm.com/" target="_blank" rel="external">https://git-scm.com/</a></p>
+<p>安装方式：直接下一步-&gt;下一步 安装即可</p>
+<ol>
+<li>安装 hexo</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli --global</div></pre></td></tr></table></figure>
+<p>接下来可以通过 <code>hexo --version</code> 命令查看是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">hexo-cli: 1.0.3</div><div class="line">os: Windows_NT 10.0.14393 win32 x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 7.10.0</div><div class="line">v8: 5.5.372.43</div><div class="line">uv: 1.11.0</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">modules: 51</div><div class="line">openssl: 1.0.2k</div><div class="line">icu: 58.2</div><div class="line">unicode: 9.0</div><div class="line">cldr: 30.0.3</div><div class="line">tz: 2016j</div></pre></td></tr></table></figure>
+<ol>
+<li>生成博客</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># hexo 会帮你在执行该命名所处的目录生成一个指定名称的目录文件</span></div><div class="line">hexo init 博客目录名称</div></pre></td></tr></table></figure>
+<ol>
+<li>启动预览博客</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+<ol>
+<li>注册 github 账号</li>
+</ol>
+<ul>
+<li><a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></li>
+<li>注册页面：<a href="https://github.com/join" target="_blank" rel="external">https://github.com/join</a></li>
+<li>填入用户名、密码、邮箱</li>
+<li>然后在自己的邮箱中收取邮件激活验证</li>
+</ul>
+<ol>
+<li>创建一个具名的仓库</li>
+</ol>
+<p>到这里一定要确保你的邮箱经过验证了。</p>
+<p>点击右上角的：+ 选择 -&gt; create repository</p>
+<p>起名：注册github时候的用户名.github.io</p>
+<ol>
+<li>把博客发布托管到 github 上</li>
+</ol>
+<p>lpzdemayun<br>heima123456</p>
+<p>线上码云示例：</p>
+<ol>
+<li>注册码云账号</li>
+<li>创建仓库（不要初始化 README）</li>
+<li>拿到仓库地址 <a href="https://git.oschina.net/lpzdemayun/lpzdemayun.git" target="_blank" rel="external">https://git.oschina.net/lpzdemayun/lpzdemayun.git</a></li>
+</ol>
+<p>本地操作准备：</p>
+<p>在 <code>_config.yml</code> 中加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://lpzdemayun:heima123456@git.oschina.net/lpzdemayun/lpzdemayun.git</div></pre></td></tr></table></figure>
+<p>然后安装一个用来快速发布的工具：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>然后：执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<p>推送成功之后，来到线上仓库，找到 服务 -&gt; Pages -&gt; 开启服务</p>
+<p>然后他会告诉你访问哪个地址就可以了。</p>
+<p>接下来你只需要写你的文章，每次发布的时候敲一个命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 先生成目录结构，然后发布</span></div><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure>
+<h2 id="搭建总结"><a href="#搭建总结" class="headerlink" title="搭建总结"></a>搭建总结</h2><p>本地的操作：</p>
+<ul>
+<li>安装 node 环境</li>
+<li>安装 git</li>
+<li>安装 hexo<ul>
+<li><code>npm install --global hexo-cli</code></li>
+</ul>
+</li>
+<li>在本地生成博客<ul>
+<li><code>hexo init 博客目录名称</code></li>
+</ul>
+</li>
+<li>在本地预览<ul>
+<li><code>hexo server</code></li>
+</ul>
+</li>
+</ul>
+<p>准备码云线上仓库：</p>
+<ul>
+<li>注册码云账号<ul>
+<li>注意：需要单独验证邮箱</li>
+</ul>
+</li>
+<li>创建一个仓库<ul>
+<li>仓库的名字随便起</li>
+</ul>
+</li>
+<li>在仓库页面找到 服务 -&gt; Pages<ul>
+<li>选择启动服务</li>
+</ul>
+</li>
+<li>拿到仓库地址<ul>
+<li><a href="https://git.oschina.net/lpzdemayun/lpzdemayun.git" target="_blank" rel="external">https://git.oschina.net/lpzdemayun/lpzdemayun.git</a></li>
+</ul>
+</li>
+</ul>
+<p>准备发布工作：</p>
+<ul>
+<li>在本地安装发布工具<ul>
+<li><code>npm install hexo-deployer-git --save</code></li>
+</ul>
+</li>
+<li>修改 <code>_config.yml</code> 文件，加入</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">注意：下面的字段右边是半角的 : 右边带一个空格</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://lpzdemayun:heima123456@git.oschina.net/lpzdemayun/lpzdemayun.git</div></pre></td></tr></table></figure>
+<p>最后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure>
+<p>接下来，直接访问：</p>
+<p><a href="http://lpzdemayun.oschina.io" target="_blank" rel="external">http://lpzdemayun.oschina.io</a></p>
+<p>上面的过程处理完之后，以后每次写完文章想要发布，直接打开命令行，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure>
+<p>即可。</p>
+<p>lipengzhou@itcast.cn</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/码云/" rel="tag">#码云</a>
+          
+            <a href="/tags/github/" rel="tag">#github</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/12/HTML中有用的字符实体/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/13/模板引擎artTemplate学习笔记/" rel="prev" title="模板引擎artTemplate学习笔记">
+                模板引擎artTemplate学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/23103K3MK.jpg"
+               alt="beikexixi" />
+          <p class="site-author-name" itemprop="name">beikexixi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建个人博客"><span class="nav-number">2.</span> <span class="nav-text">搭建个人博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo"><span class="nav-number">2.1.</span> <span class="nav-text">hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建总结"><span class="nav-number">3.</span> <span class="nav-text">搭建总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">beikexixi</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

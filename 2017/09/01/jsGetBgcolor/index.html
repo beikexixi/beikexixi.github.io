@@ -84,14 +84,17 @@
 
 
 
+<meta name="description" content="一、说明javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码:二、代码示例 以下是一段JavaScript代码  123HTMLElement.prototype.__defineGetter__(&quot;currentStyle&quot;, function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习记录">
-<meta property="og:url" content="http://yoursite.com/2017/09/13/test/index.html">
+<meta property="og:title" content="js 如何获取背景色的值？">
+<meta property="og:url" content="http://yoursite.com/2017/09/01/jsGetBgcolor/index.html">
 <meta property="og:site_name" content="西瓜古古🍉">
+<meta property="og:description" content="一、说明javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码:二、代码示例 以下是一段JavaScript代码  123HTMLElement.prototype.__defineGetter__(&quot;currentStyle&quot;, function">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-13T09:57:54.000Z">
+<meta property="og:updated_time" content="2017-09-01T05:56:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习记录">
+<meta name="twitter:title" content="js 如何获取背景色的值？">
+<meta name="twitter:description" content="一、说明javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码:二、代码示例 以下是一段JavaScript代码  123HTMLElement.prototype.__defineGetter__(&quot;currentStyle&quot;, function">
 
 
 
@@ -109,7 +112,7 @@
   };
 </script>
 
-  <title> 学习记录 | 西瓜古古🍉 </title>
+  <title> js 如何获取背景色的值？ | 西瓜古古🍉 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +262,7 @@
             
             
               
-                学习记录
+                js 如何获取背景色的值？
               
             
           </h1>
@@ -271,8 +274,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-13T17:57:54+08:00" content="2017-09-13">
-              2017-09-13
+            <time itemprop="dateCreated" datetime="2017-09-01T13:56:51+08:00" content="2017-09-01">
+              2017-09-01
             </time>
           </span>
 
@@ -299,7 +302,15 @@
       
 
       
-        
+        <h2 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h2><h3 id="javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码"><a href="#javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码" class="headerlink" title="javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码:"></a>javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码:</h3><h2 id="二、代码示例"><a href="#二、代码示例" class="headerlink" title="二、代码示例"></a>二、代码示例</h2><ul>
+<li>以下是一段JavaScript代码</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">HTMLElement.prototype.__defineGetter__(<span class="string">"currentStyle"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.ownerDocument.defaultView.getComputedStyle(<span class="keyword">this</span>, <span class="literal">null</span>); </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>使用方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bgColor = element.currentStyle.backgroundColor;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
 
@@ -323,13 +334,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/09/01/imgTransData/" rel="next" title="图片转换为文档">
+                <i class="fa fa-chevron-left"></i> 图片转换为文档
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/01/Element.classList/" rel="prev" title="Element.classList">
+                Element.classList <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -454,7 +469,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、说明"><span class="nav-number">1.</span> <span class="nav-text">一、说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码"><span class="nav-number">1.1.</span> <span class="nav-text">javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码示例"><span class="nav-number">2.</span> <span class="nav-text">二、代码示例</span></a></li></ol></div>
             
           </div>
         </section>

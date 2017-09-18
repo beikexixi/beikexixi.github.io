@@ -261,8 +261,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/15/test2/" itemprop="url">
-                  闲着玩
+                <a class="post-title-link" href="/2017/09/18/Ajax错误解决方法/" itemprop="url">
+                  Ajax错误解决方法
                 </a>
               
             
@@ -275,8 +275,261 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-15T11:39:25+08:00" content="2017-09-15">
-              2017-09-15
+            <time itemprop="dateCreated" datetime="2017-09-18T08:43:25+08:00" content="2017-09-18">
+              2017-09-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">Ajax</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jQuery中Ajax运行bug及其解决方案"><a href="#jQuery中Ajax运行bug及其解决方案" class="headerlink" title="jQuery中Ajax运行bug及其解决方案"></a>jQuery中Ajax运行bug及其解决方案</h2><ul>
+<li>form标签中表单元素无name属性，或者name属性名和后端接口文档要求不一致</li>
+<li>url和后端接口文档要求不一致</li>
+<li>data数据传参和后端接口文档要求不一致</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/17/ajax跨域/" itemprop="url">
+                  Ajax跨域
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-17T22:52:47+08:00" content="2017-09-17">
+              2017-09-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">Ajax</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>（2017.8.14）</p>
+<h2 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h2><p>协议，域名，端口均相同</p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>不满足同源即为跨域<br>具备跨域资源请求能力的标签：iframe、link、script、video、audeo</p>
+<h2 id="解决-方法"><a href="#解决-方法" class="headerlink" title="解决 方法"></a>解决 方法</h2><h3 id="解决方法-cors（Cross-origin-resource-sharing）"><a href="#解决方法-cors（Cross-origin-resource-sharing）" class="headerlink" title="解决方法 cors（Cross-origin resource sharing）"></a>解决方法 cors（Cross-origin resource sharing）</h3><ul>
+<li>cors在移动端支持度不错，可以考虑在移动端全面尝试</li>
+<li>pc上有不兼容和没有完美支持，小心踩坑</li>
+<li>jsop是get形式，承载的信息量有限，所以信息量较大时cors是不错的选择</li>
+</ul>
+<p>&lt;?php<br>    header(‘Access-Control-Allow-Origin:<a href="http://www.study.com" target="_blank" rel="external">http://www.study.com</a>‘);<br>    -&gt; 允许固定网址可访问<br>    header(‘Access-Control-Allow-Origin:*’);<br>    -&gt; 允许所有访问<br>?&gt;</p>
+<h3 id="解决方法-jsonp"><a href="#解决方法-jsonp" class="headerlink" title="解决方法 jsonp"></a>解决方法 jsonp</h3><ul>
+<li>只适合get请求</li>
+<li>jsonp利用了script标签的可跨域特性 </li>
+<li>每发一次请求就创建一个Script标签，在标签中传输信息<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3></li>
+<li>修改配置文件<br>将想要访问的网址加入到配置该虚拟域名文档中</li>
+<li>示例<br>例如：当前是www.study.com中的文件，想要访问api.study.com<br>配置虚拟域名的文档httpd-vhosts.conf中<br>在www.study.com的配置行加入ProxyPass /api <a href="http://api.study.com" target="_blank" rel="external">http://api.study.com</a><br>ajax请求是url必须写成/api<h3 id="解决方法-document-domain-iframe标签"><a href="#解决方法-document-domain-iframe标签" class="headerlink" title="解决方法 document.domain + iframe标签"></a>解决方法 document.domain + iframe标签</h3></li>
+<li><p>适合顶级域名相同的情况<br>如 www.baidu.com 和 api.baidu.com</p>
+</li>
+<li><p>互相访问的两个html文件都设置</p>
+<script>
+  document.domain = "baidu.com";
+</script>
+
+</li>
+</ul>
+<h3 id="解决方法-hash"><a href="#解决方法-hash" class="headerlink" title="解决方法  hash"></a>解决方法  hash</h3><h3 id="解决方法-name"><a href="#解决方法-name" class="headerlink" title="解决方法  name"></a>解决方法  name</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/17/正则表达式/" itemprop="url">
+                  正则表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-17T09:22:52+08:00" content="2017-09-17">
+              2017-09-17
             </time>
           </span>
 
@@ -305,7 +558,223 @@
       
         
           
-            <h2 id="码云和github"><a href="#码云和github" class="headerlink" title="码云和github"></a>码云和github</h2>
+            <p>^            匹配输入字符串的开始位置。<br>\d            匹配一个数字字符。等价于 [0-9]。</p>
+<ul>
+<li>匹配前面的子表达式零次或多次。<br>\            将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。<br>[^a-z]        负值字符范围。匹配任何不在指定范围内的任意字符。<br>[^xyz]        负值字符集合。匹配未包含的任意字符。<br>\w            匹配包括下划线的任何单词字符。等价于’[A-Za-z0-9_]’。<br>{n}            n 是一个非负整数。匹配确定的 n 次。<br>$            匹配输入字符串的结束位置。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/16/mac指令/" itemprop="url">
+                  Mac电脑指令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-16T23:18:13+08:00" content="2017-09-16">
+              2017-09-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/指令/" itemprop="url" rel="index">
+                    <span itemprop="name">指令</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Mac电脑显示隐藏文件"><a href="#Mac电脑显示隐藏文件" class="headerlink" title="Mac电脑显示隐藏文件"></a>Mac电脑显示隐藏文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">defaults write com.apple.finder AppleShowAllFiles Yes &amp;&amp; killall Finder //显示隐藏文件</div><div class="line">defaults write com.apple.finder AppleShowAllFiles No &amp;&amp; killall Finder //不显示隐藏文件</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/16/更改Mac电脑中指定文件的权限/" itemprop="url">
+                  更改Mac电脑指定文件的额权限
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-16T17:53:36+08:00" content="2017-09-16">
+              2017-09-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>数字类型改变档案权限</p>
+<p>linux档案的基本权限就有九个，分别是owner/group/others三种身份各有自己的read/write/execute权限。这九个权限是三个三个一组的。其中，我们可以使用数字来代表各个权限，各个权限的分数对照表如下：</p>
+<p>r:4<br>w:2<br>x:1</p>
+<p>每种身份（owner/group/others）各自的三个权限分数是需要累计的，例如当权限为: [-rwxrwx—] 分数则是:</p>
+<p>owner = rwx = 4+2+1 = 7<br>group = rwx = 4+2+1 = 7<br>others= — = 0+0+0 = 0</p>
+<p>所以我们设定权限的变更时，该档案的权限数字就是770了。</p>
+<p>语法：<br>chmod -R 770 档案或目录<br>解释：<br>-R 进行递归的持续变更，亦即连同次目录下的所有档案都会变更</p>
+
           
         
       
@@ -355,7 +824,7 @@
               
                 
                 <a class="post-title-link" href="/2017/09/15/git/" itemprop="url">
-                  git学习
+                  git和github进行代码管理(Mac电脑)
                 </a>
               
             
@@ -368,7 +837,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-15T11:31:29+08:00" content="2017-09-15">
+            <time itemprop="dateCreated" datetime="2017-09-15T23:52:37+08:00" content="2017-09-15">
               2017-09-15
             </time>
           </span>
@@ -398,15 +867,160 @@
       
         
           
-            <h2 id="git是什么？"><a href="#git是什么？" class="headerlink" title="git是什么？"></a>git是什么？</h2><p>git是一种版本控制工具</p>
+            <h2 id="代码管理的区域（自用github和码云作为远程仓库）"><a href="#代码管理的区域（自用github和码云作为远程仓库）" class="headerlink" title="代码管理的区域（自用github和码云作为远程仓库）"></a>代码管理的区域（自用github和码云作为远程仓库）</h2><p>Wrokspace： 工作目录/工作区（本地创建的，用于存放代码的文件夹）<br>Stage：暂存区（.git文件夹）<br>Repository： 本地仓库<br>Remote： 远程仓库（github或码云）</p>
+<blockquote>
+<p>git流程图</p>
+</blockquote>
+<p><img src="../img/git流程图.png"></p>
+<h2 id="git是什么？"><a href="#git是什么？" class="headerlink" title="git是什么？"></a>git是什么？</h2><p>git是一种版本控制工具</p>
+<h2 id="github是什么？"><a href="#github是什么？" class="headerlink" title="github是什么？"></a>github是什么？</h2><p>github相当于是代码管理的远程仓库</p>
 <h2 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h2><ol>
 <li>管理源代码（方便团队成员相互协作开发）</li>
 <li>代码的合并：保存所有的历史记录</li>
 </ol>
-<h2 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h2><ol>
-<li>配置用户信息<br>git config –global user.name 用户名<br>git config –global user.email</li>
+<h2 id="git和github的使用"><a href="#git和github的使用" class="headerlink" title="git和github的使用"></a>git和github的使用</h2><h3 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h3><h4 id="一、基本操作"><a href="#一、基本操作" class="headerlink" title="一、基本操作"></a>一、基本操作</h4><ol>
+<li>配置用户信息<br> git config –global user.name github用户名<br> git config –global user.email github邮箱</li>
+<li>新建一个Git代码库/初始化本地仓库<br> git init<br> -&gt; 此时会在工作目录生成.git 文件，但是Mac电脑默认是隐藏的</li>
+<li>查看仓库中所有文件的文件状态<br> git status</li>
+<li>把工作目录中的文件添加到暂存区<br> git add *<br> -&gt; 将工作目录中的所有文件都添加到暂存区<br> git add 文件列表<br> -&gt; 添加制定文件到暂存区<br> -&gt; git rm –cached 文件名称 #add的逆操作</li>
+<li>把暂存区的文件添加到本地仓库<br> git commit -m ‘备注信息’<br> git commit -a -m 备注信息  #(-a只能提交已修改的文件，不能提交未跟踪文件）<br> -&gt; git log 可以查看commit的日志,查看提交历史<br>-&gt; 至此，本地的文件的基本管理已经结束<h4 id="二、分支"><a href="#二、分支" class="headerlink" title="二、分支"></a>二、分支</h4>git branch              #查看本地所有分支<br>git branch -a           #查看所有的分支,包括远程分支<br>git branch -r           #查看远程所有分支<br>git branch 分支名称  #创建分支<br> -&gt; git checkout -b 分支名称 #也可用于创建分支<br>git checkout 分支名称    #切换到指定分支<br>git merge 分支名称       #合并指定分支到当前分支<br>git branch -d 分支名称   #删除分支,如果没有被合并,无法删除<br>git branch -D           #强行删除分支，请慎重<br>git push origin 分支名称 #推送本地分支至远程仓库，创建远程分支<br>git push origin –delete 分支名称 #删除远程分支<h4 id="三、撤销-回滚"><a href="#三、撤销-回滚" class="headerlink" title="三、撤销(回滚)"></a>三、撤销(回滚)</h4>git checkout 文件列表  #回滚修改的内容v<br>git checkout .        #(回滚所有的修改，慎重使用)</li>
 </ol>
-<h2 id="常用Git命令清单"><a href="#常用Git命令清单" class="headerlink" title="常用Git命令清单"></a>常用Git命令清单</h2><h3 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h3><h3 id="二、本地仓库操作"><a href="#二、本地仓库操作" class="headerlink" title="二、本地仓库操作"></a>二、本地仓库操作</h3>
+<ul>
+<li>使用本地仓库的快照进行回滚<ul>
+<li>git reset<ul>
+<li>–hard</li>
+<li>–soft</li>
+<li>–mixed (默认参数)<br>git reset –hard HEAD^  #回滚最后一次提交<br>git reset –hard HEAD   #回滚所有的工作目录和暂存区内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="四、删除"><a href="#四、删除" class="headerlink" title="四、删除"></a>四、删除</h4><h3 id="远程仓库的相关操作"><a href="#远程仓库的相关操作" class="headerlink" title="远程仓库的相关操作"></a>远程仓库的相关操作</h3><ul>
+<li>克隆远程仓库的项目<ul>
+<li>git clone 远程仓库地址 项目名称</li>
+</ul>
+</li>
+<li>拉取远程的分支<ul>
+<li>git pull 远程仓库地址 远程分支名称:本地分支名称</li>
+</ul>
+</li>
+<li>推送分支到远程仓库<ul>
+<li>git push 远程仓库地址 本地分支名称:远程分支名称</li>
+</ul>
+</li>
+<li>添加远程仓库别名<ul>
+<li>git remote add 别名 远程仓库地址</li>
+</ul>
+</li>
+<li>删除远程仓库别名<ul>
+<li>git remote remove 别名</li>
+</ul>
+</li>
+<li>查看远程仓库别名的详细信息<ul>
+<li>git remote show 别名</li>
+</ul>
+</li>
+<li>查看所有别名<ul>
+<li>git remote</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/15/阴阳师图集/" itemprop="url">
+                  图集--美呆
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-15T23:32:01+08:00" content="2017-09-15">
+              2017-09-15
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="../img/beauty/23103K3MK.jpg"><br><img src="../img/beauty/boy1.jpeg"><br><img src="../img/beauty/girl1.jpeg"><br><img src="../img/beauty/animal1.jpeg"></p>
+
           
         
       
@@ -537,6 +1151,104 @@
 <li>cp (copy) 复制文件，cp index.html ./demo/index.html</li>
 <li>tab 自动补全，连按两次会将所有匹配内容显示出来</li>
 </ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/14/HTML中有用的字符实体/" itemprop="url">
+                  HTML常用的字符实体
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-14T08:34:23+08:00" content="2017-09-14">
+              2017-09-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="常用实体名称"><a href="#常用实体名称" class="headerlink" title="常用实体名称"></a>常用实体名称</h2><table class=""><br><thead style="backgroundColor:gray"><br><tr><br>    <td>显示结果</td><br>    <td>描述</td><br>    <td>实体名称</td><br></tr><br></thead><br><tbody><br><tr><br>    <td> &gt; </td><br>    <td>大于号</td><br>    <td><code>&amp;gt;</code></td><br></tr><br><tr><br>    <td> &lt; </td><br>    <td>小于号</td><br>    <td><code>&amp;lt;</code></td><br></tr><br><tr><br>    <td>   </td><br>    <td>空格</td><br>    <td><code>&amp;nbsp;</code></td><br></tr><br><tr><br>    <td> x </td><br>    <td>乘号</td><br>    <td><code>&amp;times;</code></td><br></tr><br><tr><br>    <td> © </td><br>    <td>版权（copyright</td><br>    <td><code>&amp;copy;</code></td><br></tr><br><tr><br>    <td> ¥ </td><br>    <td>元(yen)</td><br>    <td><code>&amp;yen;</code></td><br></tr><br><tr><br>    <td> &amp; </td><br>    <td>和号</td><br>    <td><code>&amp;amp;</code></td><br></tr><br><tr><br>    <td> “ </td><br>    <td>引号</td><br>    <td><code>&amp;quot;</code></td><br></tr><br><tr><br>    <td> ‘ </td><br>    <td>撇号</td><br>    <td><code>&amp;apos; (IE不支持)</code></td><br></tr><br></tbody><br></table>
+
+
+
+
 
           
         
@@ -790,752 +1502,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/14/HTML中有用的字符实体/" itemprop="url">
-                  HTML常用的字符实体
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-14T08:34:23+08:00" content="2017-09-14">
-              2017-09-14
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="常用实体名称"><a href="#常用实体名称" class="headerlink" title="常用实体名称"></a>常用实体名称</h2><table class=""><br><thead style="backgroundColor:gray"><br><tr><br>    <td>显示结果</td><br>    <td>描述</td><br>    <td>实体名称</td><br></tr><br></thead><br><tbody><br><tr><br>    <td> &gt; </td><br>    <td>大于号</td><br>    <td><code>&amp;gt;</code></td><br></tr><br><tr><br>    <td> &lt; </td><br>    <td>小于号</td><br>    <td><code>&amp;lt;</code></td><br></tr><br><tr><br>    <td>   </td><br>    <td>空格</td><br>    <td><code>&amp;nbsp;</code></td><br></tr><br><tr><br>    <td> x </td><br>    <td>乘号</td><br>    <td><code>&amp;times;</code></td><br></tr><br><tr><br>    <td> © </td><br>    <td>版权（copyright</td><br>    <td><code>&amp;copy;</code></td><br></tr><br><tr><br>    <td> ¥ </td><br>    <td>元(yen)</td><br>    <td><code>&amp;yen;</code></td><br></tr><br><tr><br>    <td> &amp; </td><br>    <td>和号</td><br>    <td><code>&amp;amp;</code></td><br></tr><br><tr><br>    <td> “ </td><br>    <td>引号</td><br>    <td><code>&amp;quot;</code></td><br></tr><br><tr><br>    <td> ‘ </td><br>    <td>撇号</td><br>    <td><code>&amp;apos; (IE不支持)</code></td><br></tr><br></tbody><br></table>
-
-
-
-
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/14/比较特色的样式布局/" itemprop="url">
-                  比较特色的样式布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-14T08:26:01+08:00" content="2017-09-14">
-              2017-09-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？"><a href="#在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？" class="headerlink" title="在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？"></a>在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？</h2><p>word-break: break-all; //在恰当的断字点进行换行<br>-webkit-line-clamp:2; //限制一个块元素显示文本的行数<br>display: -webkit-box; //将对象作为一个弹性伸缩盒模型显示<br>-webkit-box-orient: vertical; //设置检索伸缩盒对象子元素排列方式</p>
-<h2 id="只显示一行，超出部分显示省略号"><a href="#只显示一行，超出部分显示省略号" class="headerlink" title="只显示一行，超出部分显示省略号"></a>只显示一行，超出部分显示省略号</h2><p>overflow:hidden;<br>text-overflow:ellipsis;<br>white-space: nowrap;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/14/inherit/" itemprop="url">
-                  继承学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-14T08:19:55+08:00" content="2017-09-14">
-              2017-09-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h2><h2 id="构造函数继承"><a href="#构造函数继承" class="headerlink" title="构造函数继承"></a>构造函数继承</h2><h2 id="组合继承（推荐）"><a href="#组合继承（推荐）" class="headerlink" title="组合继承（推荐）"></a>组合继承（推荐）</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/13/test/" itemprop="url">
-                  学习记录
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-13T17:57:54+08:00" content="2017-09-13">
-              2017-09-13
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/13/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-13T17:36:11+08:00" content="2017-09-13">
-              2017-09-13
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/13/模板引擎artTemplate学习笔记/" itemprop="url">
-                  模板引擎artTemplate学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-13T15:01:39+08:00" content="2017-09-13">
-              2017-09-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">前端学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一、为什么需要artTemplate"><a href="#一、为什么需要artTemplate" class="headerlink" title="一、为什么需要artTemplate"></a>一、为什么需要artTemplate</h2><p>页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法</p>
-<ul>
-<li>1.字符串拼接<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> html = <span class="string">"&lt;div class=box&gt;盒子&lt;/div&gt;"</span>;</div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"body"</span>).innerHTML = html;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>缺点：当需要大量字符串拼接时容易出错</p>
-<ul>
-<li>2.添加节点<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> node = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div><div class="line">node.innerHTML = <span class="string">"盒子"</span>;</div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"body"</span>).appendChild(node);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>缺点：大量操作DOM，不利于性能优化</p>
-<ul>
-<li>3.模板引擎(自用artTemplate)<br> 若ajax传回来的数据data中有属性name=”盒子”<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/html&quot; id=&quot;id-name&quot;&gt;</div><div class="line">    &lt;div&gt;data.name&lt;/div&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>优点：使用模板引擎渲染页面更快</p>
-<h2 id="artTemplate特性–摘自artTemplate官网"><a href="#artTemplate特性–摘自artTemplate官网" class="headerlink" title="artTemplate特性–摘自artTemplate官网"></a>artTemplate特性–摘自artTemplate官网</h2><ol>
-<li>性能卓越，执行速度通常是 Mustache 与 tmpl 的 20 多倍（性能测试）</li>
-<li>支持运行时调试，可精确定位异常模板所在语句（演示）</li>
-<li>对 NodeJS Express 友好支持</li>
-<li>安全，默认对输出进行转义、在沙箱中运行编译后的代码（Node版本可以安全执行用户上传的模板）</li>
-<li>支持include语句</li>
-<li>可在浏览器端实现按路径加载模板（详情）</li>
-<li>支持预编译，可将模板转换成为非常精简的 js 文件</li>
-<li>模板语句简洁，无需前缀引用数据，有简洁版本与原生语法版本可选</li>
-<li>支持所有流行的浏览器</li>
-</ol>
-<h2 id="二、artTemplate的模板语法分类"><a href="#二、artTemplate的模板语法分类" class="headerlink" title="二、artTemplate的模板语法分类"></a>二、artTemplate的模板语法分类</h2><ul>
-<li><p>简洁语法<br>  引包-template.js</p>
-</li>
-<li><p>原生语法(自用)<br>  引包-template-native.js</p>
-<p>  自用原生语法，因为可以直接书写js原生代码</p>
-<h2 id="三、方法"><a href="#三、方法" class="headerlink" title="三、方法"></a>三、方法</h2><ul>
-<li>template(id, data)<br>  根据 id 渲染模板。内部会根据document.getElementById(id)查找模板。<br>  如果没有 data 参数，那么将返回一渲染函数。</li>
-<li><p>template.helper(name, callback)<br>  添加辅助方法。可以将全局变量传入模板以便使用。<br> -示例如下,为了能够使用jQuery等全局变量需要如下代码</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    /*帮助申明一个模版内能使用的函数*/</div><div class="line">    template.helper(&apos;get&apos;,function () &#123;</div><div class="line">        return &#123;</div><div class="line">            $:jQuery,</div><div class="line">            console:console,</div><div class="line">            Math: window.Math</div><div class="line">        &#125;;</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>template.compile(source, options)<br>  将返回一个渲染函数。</p>
-</li>
-<li><p>template.render(source, options)<br>  将返回渲染结果。</p>
-</li>
-<li><p>template.config(name, value)<br>更改引擎的默认配置。</p>
-<h2 id="四、使用小结"><a href="#四、使用小结" class="headerlink" title="四、使用小结"></a>四、使用小结</h2></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>data必须是对象<br>模板传入的数据必须是对象，遍历的时候只能遍历data中的属性 </p>
-</li>
-<li><p>模版输出语法 </p>
-<ol>
-<li><p>模板逻辑输出  &lt;%   %&gt;<br>-示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;% for(var i=0; i&lt; data.length; i++) &#123; %&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>输出变量  &lt;%=  %&gt;<br>-示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= data.name %&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>输出编码后数据<br>-示例,说明：若后端传回的数据类似</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;&lt;img src=&apos;http:www.baidu.com/666&apos; alt=&apos;picture&apos;&gt;&quot;,</div></pre></td></tr></table></figure>
-<p>可以使用如下输出语法，可以将其在html文件中编译为img标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%=# data.img %&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><strong style="color:red">js语法不能用在模版内     变量 函数 分支循环</strong><br>解决方法:使用辅助函数 帮助申明一个模版内能使用的函数<br>借助template.helper()</p>
-</li>
-</ul>
-<h2 id="四、常用使用实例"><a href="#四、常用使用实例" class="headerlink" title="四、常用使用实例"></a>四、常用使用实例</h2><h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><ul>
-<li><p>功能简介：往某个div中动态添加从后端传输回来的数据</p>
-<ul>
-<li><p>返回数据data假设如下：{name: “盒子”}</p>
-</li>
-<li><p>最终实现效果为：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"outer"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>采用ajax进行异步数据交互</p>
-</li>
-</ul>
-</li>
-<li><p>具体实现代码</p>
-<ul>
-<li><p>html代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"outer"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>js代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    url: <span class="string">"后端入口地址"</span>,</div><div class="line">    type: <span class="string">"文件传输方式,取值为get或post"</span>,</div><div class="line">    dataType: <span class="string">"数据返回格式json,其他取值可为xml等"</span>,</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="comment">// 成功执行函数</span></div><div class="line">      $(<span class="string">"#outer"</span>).html(template(<span class="string">"newBox"</span>,data));</div><div class="line">    &#125;,</div><div class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">     <span class="comment">// 失败执行函数</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>html文件中的模板如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/html&quot; id=&quot;newBox&quot;&gt;</div><div class="line">    &lt;div&gt;data.name&lt;/div&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h3><ul>
-<li>功能简介：依据后端传回来的数据动态生成制定数目的option标签</li>
-<li>具体实现代码<ul>
-<li>模板代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/html&quot; id=&quot;pages&quot;&gt;</div><div class="line">    &lt;%</div><div class="line">        var getCeil = function(num1,num2)&#123;</div><div class="line">            return num1/num2;</div><div class="line">        &#125;</div><div class="line">    %&gt;</div><div class="line">    &lt;select name=&quot;products-page&quot; id=&quot;page-num&quot;&gt;</div><div class="line">        &lt;% for(var i=0 ;i &lt; getCeil(totalCount,pagesize); i ++) &#123; %&gt;</div><div class="line">        &lt;option value=&quot;&lt;%= (i+1) %&gt;&quot;&gt;&lt;%= (i+1) %&gt;/&lt;%= getCeil(totalCount,pagesize) %&gt;&lt;/option&gt;</div><div class="line">        &lt;% &#125; %&gt;</div><div class="line">    &lt;/select&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="案例3"><a href="#案例3" class="headerlink" title="案例3"></a>案例3</h3><ul>
-<li><p>具体实现代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/template&quot; id=&quot;template&quot;&gt;</div><div class="line">    &lt;% var $ = get().$; %&gt;</div><div class="line">    &lt;% $.each(list,function(i,item)&#123; %&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;&lt;%=i+1 %&gt;&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;img width=&quot;100&quot; src=&quot;&lt;%=item.url %&gt;&quot; alt=&quot;&quot;&gt;&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;%=#item.nowPrice %&gt;&lt;/td&gt;</div><div class="line">            &lt;% if(item.oldPrice &gt; 1000)&#123; %&gt;</div><div class="line">                &lt;td style=&quot;color: red&quot;&gt;&lt;%=item.oldPrice %&gt;&lt;/td&gt;</div><div class="line">            &lt;% &#125;else&#123; %&gt;</div><div class="line">                &lt;td&gt;&lt;%=item.oldPrice %&gt;&lt;/td&gt;</div><div class="line">            &lt;% &#125; %&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">    &lt;% &#125;); %&gt;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;js/template-native.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>说明<br>为了能够使用jQuery还需要如下代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    /*帮助申明一个模版内能使用的函数*/</div><div class="line">    template.helper(&apos;get&apos;,function () &#123;</div><div class="line">        return &#123;$:jQuery,console:console&#125;;</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1576,7 +1547,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1584,7 +1555,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

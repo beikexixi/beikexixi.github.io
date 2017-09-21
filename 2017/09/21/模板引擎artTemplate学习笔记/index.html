@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = html;   缺点：当需要大量字符串拼接时容易出错  2.添加节点123var node =">
+<meta name="description" content="-&amp;gt; 本问的叙述是基于artTemplate3.0，4.0版本相关的知识会明确指出 一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = htm">
 <meta name="keywords" content="artTemplate">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模板引擎artTemplate学习笔记">
-<meta property="og:url" content="http://yoursite.com/2017/09/13/模板引擎artTemplate学习笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/21/模板引擎artTemplate学习笔记/index.html">
 <meta property="og:site_name" content="西瓜古古🍉">
-<meta property="og:description" content="一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = html;   缺点：当需要大量字符串拼接时容易出错  2.添加节点123var node =">
+<meta property="og:description" content="-&amp;gt; 本问的叙述是基于artTemplate3.0，4.0版本相关的知识会明确指出 一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = htm">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-13T07:01:39.000Z">
+<meta property="og:updated_time" content="2017-09-21T07:01:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模板引擎artTemplate学习笔记">
-<meta name="twitter:description" content="一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = html;   缺点：当需要大量字符串拼接时容易出错  2.添加节点123var node =">
+<meta name="twitter:description" content="-&amp;gt; 本问的叙述是基于artTemplate3.0，4.0版本相关的知识会明确指出 一、为什么需要artTemplate页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法  1.字符串拼接12var html = &quot;&amp;lt;div class=box&amp;gt;盒子&amp;lt;/div&amp;gt;&quot;;document.querySelector(&quot;body&quot;).innerHTML = htm">
 
 
 
@@ -275,8 +275,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-13T15:01:39+08:00" content="2017-09-13">
-              2017-09-13
+            <time itemprop="dateCreated" datetime="2017-09-21T15:01:06+08:00" content="2017-09-21">
+              2017-09-21
             </time>
           </span>
 
@@ -322,7 +322,8 @@
       
 
       
-        <h2 id="一、为什么需要artTemplate"><a href="#一、为什么需要artTemplate" class="headerlink" title="一、为什么需要artTemplate"></a>一、为什么需要artTemplate</h2><p>页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法</p>
+        <p>-&gt; 本问的叙述是基于artTemplate3.0，4.0版本相关的知识会明确指出</p>
+<h2 id="一、为什么需要artTemplate"><a href="#一、为什么需要artTemplate" class="headerlink" title="一、为什么需要artTemplate"></a>一、为什么需要artTemplate</h2><p>页面大多情况下是需要根据后端数据动态渲染页面的，一般共3种方法</p>
 <ul>
 <li>1.字符串拼接<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> html = <span class="string">"&lt;div class=box&gt;盒子&lt;/div&gt;"</span>;</div><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"body"</span>).innerHTML = html;</div></pre></td></tr></table></figure>
 </li>
@@ -358,6 +359,10 @@
 <li>template(id, data)<br>  根据 id 渲染模板。内部会根据document.getElementById(id)查找模板。<br>  如果没有 data 参数，那么将返回一渲染函数。</li>
 <li><p>template.helper(name, callback)<br>  添加辅助方法。可以将全局变量传入模板以便使用。<br> -示例如下,为了能够使用jQuery等全局变量需要如下代码</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    /*帮助申明一个模版内能使用的函数*/</div><div class="line">    template.helper(&apos;get&apos;,function () &#123;</div><div class="line">        return &#123;</div><div class="line">            $:jQuery,</div><div class="line">            console:console,</div><div class="line">            Math: window.Math</div><div class="line">        &#125;;</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>  -&gt; 4.0 版本helper已经不能使用，需要使用如下方法</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">template.defaults.imports.functionName = function()&#123;</div><div class="line">    // doSomething</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  -&gt; 实例如下</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">template.defaults.imports.get = function() &#123;</div><div class="line">   return &#123;</div><div class="line">       $: jQuery,</div><div class="line">       Math: window.Math,</div><div class="line">       Date: window.Date,</div><div class="line">       String: window.String</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>template.compile(source, options)<br>  将返回一个渲染函数。</p>
 </li>
@@ -386,7 +391,7 @@
 </li>
 </ol>
 </li>
-<li><p><strong style="color:red">js语法不能用在模版内     变量 函数 分支循环</strong><br>解决方法:使用辅助函数 帮助申明一个模版内能使用的函数<br>借助template.helper()</p>
+<li><p><strong style="color:red">js语法不能用在模版内     变量 函数 分支循环</strong><br>解决方法:使用辅助函数 帮助申明一个模版内能使用的函数<br>借助template.helper()<br><strong style="color: red">辅助函数只能是 var  fn = function (){  // code}的形式</strong></p>
 </li>
 </ul>
 <h2 id="四、常用使用实例"><a href="#四、常用使用实例" class="headerlink" title="四、常用使用实例"></a>四、常用使用实例</h2><h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><ul>
@@ -462,16 +467,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/12/前端学习相关网站/" rel="next" title="前端学习相关网站">
-                <i class="fa fa-chevron-left"></i> 前端学习相关网站
+              <a href="/2017/09/21/js中数组和字符串的常用方法总结/" rel="next" title="js中数组和字符串的常用方法总结">
+                <i class="fa fa-chevron-left"></i> js中数组和字符串的常用方法总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/13/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/21/模块化规范/" rel="prev" title="模块化规范">
+                模块化规范 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -540,7 +545,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -548,7 +553,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -557,7 +562,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

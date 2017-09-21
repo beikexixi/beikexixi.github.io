@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="（2017.8.14） 同源协议，域名，端口均相同 跨域不满足同源即为跨域具备跨域资源请求能力的标签：iframe、link、script、video、audeo 解决 方法解决方法 cors（Cross-origin resource sharing） cors在移动端支持度不错，可以考虑在移动端全面尝试 pc上有不兼容和没有完美支持，小心踩坑 jsop是get形式，承载的信息量有限，所以信息量">
+<meta name="description" content="title: AMD和CMD规范tags:  categories: 参考资料[require.js的用法] http://www.ruanyifeng.com/blog/2012/11/require_js.html Sea.js 和 Require.js// CMD 对于依赖的模块,CMD 是延迟执行define(function(require, exports, module) {">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax跨域">
-<meta property="og:url" content="http://yoursite.com/2017/09/17/ajax跨域/index.html">
+<meta property="og:title" content="西瓜古古🍉">
+<meta property="og:url" content="http://yoursite.com/2017/09/19/AMD和CMD规范/index.html">
 <meta property="og:site_name" content="西瓜古古🍉">
-<meta property="og:description" content="（2017.8.14） 同源协议，域名，端口均相同 跨域不满足同源即为跨域具备跨域资源请求能力的标签：iframe、link、script、video、audeo 解决 方法解决方法 cors（Cross-origin resource sharing） cors在移动端支持度不错，可以考虑在移动端全面尝试 pc上有不兼容和没有完美支持，小心踩坑 jsop是get形式，承载的信息量有限，所以信息量">
+<meta property="og:description" content="title: AMD和CMD规范tags:  categories: 参考资料[require.js的用法] http://www.ruanyifeng.com/blog/2012/11/require_js.html Sea.js 和 Require.js// CMD 对于依赖的模块,CMD 是延迟执行define(function(require, exports, module) {">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-17T14:52:47.000Z">
+<meta property="og:updated_time" content="2017-09-19T08:54:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax跨域">
-<meta name="twitter:description" content="（2017.8.14） 同源协议，域名，端口均相同 跨域不满足同源即为跨域具备跨域资源请求能力的标签：iframe、link、script、video、audeo 解决 方法解决方法 cors（Cross-origin resource sharing） cors在移动端支持度不错，可以考虑在移动端全面尝试 pc上有不兼容和没有完美支持，小心踩坑 jsop是get形式，承载的信息量有限，所以信息量">
+<meta name="twitter:title" content="西瓜古古🍉">
+<meta name="twitter:description" content="title: AMD和CMD规范tags:  categories: 参考资料[require.js的用法] http://www.ruanyifeng.com/blog/2012/11/require_js.html Sea.js 和 Require.js// CMD 对于依赖的模块,CMD 是延迟执行define(function(require, exports, module) {">
 
 
 
@@ -112,7 +112,7 @@
   };
 </script>
 
-  <title> Ajax跨域 | 西瓜古古🍉 </title>
+  <title>  | 西瓜古古🍉 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
             
             
               
-                Ajax跨域
+                
               
             
           </h1>
@@ -274,30 +274,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-17T22:52:47+08:00" content="2017-09-17">
-              2017-09-17
+            <time itemprop="dateCreated" datetime="2017-09-19T16:54:24+08:00" content="2017-09-19">
+              2017-09-19
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Ajax/" itemprop="url" rel="index">
-                    <span itemprop="name">Ajax</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -321,31 +302,11 @@
       
 
       
-        <p>（2017.8.14）</p>
-<h2 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h2><p>协议，域名，端口均相同</p>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>不满足同源即为跨域<br>具备跨域资源请求能力的标签：iframe、link、script、video、audeo</p>
-<h2 id="解决-方法"><a href="#解决-方法" class="headerlink" title="解决 方法"></a>解决 方法</h2><h3 id="解决方法-cors（Cross-origin-resource-sharing）"><a href="#解决方法-cors（Cross-origin-resource-sharing）" class="headerlink" title="解决方法 cors（Cross-origin resource sharing）"></a>解决方法 cors（Cross-origin resource sharing）</h3><ul>
-<li>cors在移动端支持度不错，可以考虑在移动端全面尝试</li>
-<li>pc上有不兼容和没有完美支持，小心踩坑</li>
-<li>jsop是get形式，承载的信息量有限，所以信息量较大时cors是不错的选择</li>
-</ul>
-<p>&lt;?php<br>    header(‘Access-Control-Allow-Origin:<a href="http://www.study.com" target="_blank" rel="external">http://www.study.com</a>‘);<br>    -&gt; 允许固定网址可访问<br>    header(‘Access-Control-Allow-Origin:*’);<br>    -&gt; 允许所有访问<br>?&gt;</p>
-<h3 id="解决方法-jsonp"><a href="#解决方法-jsonp" class="headerlink" title="解决方法 jsonp"></a>解决方法 jsonp</h3><ul>
-<li>只适合get请求</li>
-<li>jsonp利用了script标签的可跨域特性 </li>
-<li>每发一次请求就创建一个Script标签，在标签中传输信息<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3></li>
-<li>修改配置文件<br>将想要访问的网址加入到配置该虚拟域名文档中</li>
-<li>示例<br>例如：当前是www.study.com中的文件，想要访问api.study.com<br>配置虚拟域名的文档httpd-vhosts.conf中<br>在www.study.com的配置行加入ProxyPass /api <a href="http://api.study.com" target="_blank" rel="external">http://api.study.com</a><br>ajax请求是url必须写成/api<h3 id="解决方法-document-domain-iframe标签"><a href="#解决方法-document-domain-iframe标签" class="headerlink" title="解决方法 document.domain + iframe标签"></a>解决方法 document.domain + iframe标签</h3></li>
-<li><p>适合顶级域名相同的情况<br>如 www.baidu.com 和 api.baidu.com</p>
-</li>
-<li><p>互相访问的两个html文件都设置</p>
-<script>
-  document.domain = "baidu.com";
-</script>
+        <p>title: AMD和CMD规范<br>tags: </p>
+<h2 id="categories"><a href="#categories" class="headerlink" title="categories: "></a>categories: </h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[require.js的用法] <a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a></p>
+<h2 id="Sea-js-和-Require-js"><a href="#Sea-js-和-Require-js" class="headerlink" title="Sea.js 和 Require.js"></a>Sea.js 和 Require.js</h2><p>// CMD 对于依赖的模块,CMD 是延迟执行<br>define(function(require, exports, module) {<br>    var a = require(‘./a’)<br>    a.doSomething()<br>    // …<br>    var b = require(‘./b’) // 依赖可以就近书写<br>    b.doSomething()<br>    // …<br>})</p>
+<p>// AMD 对于依赖的模块,AMD 是提前执行<br>define([‘./a’, ‘./b’], function(a, b) { // 依赖必须一开始就写好<br>    a.doSomething()<br>    // …<br>    b.doSomething()<br>    // …<br>})</p>
 
-</li>
-</ul>
-<h3 id="解决方法-hash"><a href="#解决方法-hash" class="headerlink" title="解决方法  hash"></a>解决方法  hash</h3><h3 id="解决方法-name"><a href="#解决方法-name" class="headerlink" title="解决方法  name"></a>解决方法  name</h3>
       
     </div>
 
@@ -369,16 +330,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/17/正则表达式/" rel="next" title="正则表达式">
-                <i class="fa fa-chevron-left"></i> 正则表达式
+              <a href="/2017/09/18/jQuery-cookie/" rel="next" title="jQuery插件--cookie使用">
+                <i class="fa fa-chevron-left"></i> jQuery插件--cookie使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/18/Ajax错误解决方法/" rel="prev" title="Ajax错误解决方法">
-                Ajax错误解决方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/21/js中call和bind的使用/" rel="prev" title="js中call和bind的使用">
+                js中call和bind的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -447,7 +408,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -455,7 +416,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -464,7 +425,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -504,7 +465,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#同源"><span class="nav-number">1.</span> <span class="nav-text">同源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number">2.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决-方法"><span class="nav-number">3.</span> <span class="nav-text">解决 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-cors（Cross-origin-resource-sharing）"><span class="nav-number">3.1.</span> <span class="nav-text">解决方法 cors（Cross-origin resource sharing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-jsonp"><span class="nav-number">3.2.</span> <span class="nav-text">解决方法 jsonp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理"><span class="nav-number">3.3.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-document-domain-iframe标签"><span class="nav-number">3.4.</span> <span class="nav-text">解决方法 document.domain + iframe标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-hash"><span class="nav-number">3.5.</span> <span class="nav-text">解决方法  hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-name"><span class="nav-number">3.6.</span> <span class="nav-text">解决方法  name</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories"><span class="nav-number">1.</span> <span class="nav-text">categories: </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sea-js-和-Require-js"><span class="nav-number">3.</span> <span class="nav-text">Sea.js 和 Require.js</span></a></li></ol></div>
             
           </div>
         </section>

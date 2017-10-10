@@ -261,6 +261,758 @@
             
               
                 
+                <a class="post-title-link" href="/2017/09/21/js中数组和字符串的常用方法总结/" itemprop="url">
+                  js中数组和字符串的常用方法总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-21T11:48:46+08:00" content="2017-09-21">
+              2017-09-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="不改变原数组"><a href="#不改变原数组" class="headerlink" title="不改变原数组"></a>不改变原数组</h3><ul>
+<li>slice（）<ul>
+<li>用途： Array.prototype.slice.call(arguments)能将<font color="red">具有length属性</font>的对象转成数组,<br>此对象可以包括arguments伪数组、数组、{length:2,”0”:”haha”,”1”:’oye’}<br>-》 借用call将非数组转换成数组的方法<font color="red"><br>方法一：var args = Array.prototype.slice.call(arguments);<br>方法二：var args = [].slice.call(arguments, 0);<br></font>
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>var a={length:2,0:&apos;first&apos;,1:&apos;second&apos;};//伪数组,有length属性
+console.log(Array.prototype.slice.call(a,0));// [&quot;first&quot;, &quot;second&quot;],调用数组的slice(0);
+
+var a={length:2,0:&apos;first&apos;,1:&apos;second&apos;};
+console.log(Array.prototype.slice.call(a,1));//[&quot;second&quot;]，调用数组的slice(1);
+
+var a={0:&apos;first&apos;,1:&apos;second&apos;};//去掉length属性，返回一个空数组
+console.log(Array.prototype.slice.call(a,0));//[]
+
+function test(){
+  console.log(Array.prototype.slice.call(arguments,0));//[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]，slice(0)
+  console.log(Array.prototype.slice.call(arguments,1));//[&quot;b&quot;, &quot;c&quot;],slice(1)
+}
+test(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/21/HTML中有用的字符实体/" itemprop="url">
+                  HTML常用的字符实体
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-21T11:40:55+08:00" content="2017-09-21">
+              2017-09-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="常用实体名称"><a href="#常用实体名称" class="headerlink" title="常用实体名称"></a>常用实体名称</h2><table>
+<thead>
+<tr>
+<th>显示结果</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:right">实体名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;</td>
+<td style="text-align:center">大于号</td>
+<td style="text-align:right"><code>&amp;gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table class=""><br><thead style="backgroundColor:gray"><br><tr><br>    <td>显示结果</td><br>    <td>描述</td><br>    <td>实体名称</td><br></tr><br></thead><br><tbody><br><tr><br>    <td> &gt; </td><br>    <td>大于号</td><br>    <td><code>&amp;gt;</code></td><br></tr><br><tr><br>    <td> &lt; </td><br>    <td>小于号</td><br>    <td><code>&amp;lt;</code></td><br></tr><br><tr><br>    <td>   </td><br>    <td>空格</td><br>    <td><code>&amp;nbsp;</code></td><br></tr><br><tr><br>    <td> x </td><br>    <td>乘号</td><br>    <td><code>&amp;times;</code></td><br></tr><br><tr><br>    <td> © </td><br>    <td>版权（copyright</td><br>    <td><code>&amp;copy;</code></td><br></tr><br><tr><br>    <td> ¥ </td><br>    <td>元(yen)</td><br>    <td><code>&amp;yen;</code></td><br></tr><br><tr><br>    <td> &amp; </td><br>    <td>和号</td><br>    <td><code>&amp;amp;</code></td><br></tr><br><tr><br>    <td> “ </td><br>    <td>引号</td><br>    <td><code>&amp;quot;</code></td><br></tr><br><tr><br>    <td> ‘ </td><br>    <td>撇号</td><br>    <td><code>&amp;apos; (IE不支持)</code></td><br></tr><br></tbody><br></table>
+
+
+
+
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/21/前端学习相关网站/" itemprop="url">
+                  前端学习相关网站
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-21T11:34:45+08:00" content="2017-09-21">
+              2017-09-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="百度静态资源公共库"><a href="#百度静态资源公共库" class="headerlink" title="百度静态资源公共库"></a>百度静态资源公共库</h2><p><a href="cdn.code.baidu.com">百度静态资源公共库</a></p>
+<h2 id="AngularJs"><a href="#AngularJs" class="headerlink" title="AngularJs"></a>AngularJs</h2><p>[1] <a href="http://www.cnblogs.com/powertoolsteam/p/angularjs-introdection.html" target="_blank" rel="external">http://www.cnblogs.com/powertoolsteam/p/angularjs-introdection.html</a><br>[2] <a href="http://www.apjs.net/" target="_blank" rel="external">http://www.apjs.net/</a><br>[3] <a href="http://www.angularjs.cn/" target="_blank" rel="external">http://www.angularjs.cn/</a><br>[4] <a href="http://docs.angularjs.cn/api" target="_blank" rel="external">http://docs.angularjs.cn/api</a><br>[5] <a href="https://material.angularjs.org" target="_blank" rel="external">https://material.angularjs.org</a><br>[6] <a href="http://angular-ui.github.io/" target="_blank" rel="external">http://angular-ui.github.io/</a></p>
+<h2 id="markdown相关文档"><a href="#markdown相关文档" class="headerlink" title="markdown相关文档"></a>markdown相关文档</h2><p>[1] <a href="http://blog.csdn.net/u011419965/article/details/50536937" target="_blank" rel="external">http://blog.csdn.net/u011419965/article/details/50536937</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/21/js中call和bind的使用/" itemprop="url">
+                  js中call和bind的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-21T11:24:22+08:00" content="2017-09-21">
+              2017-09-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="call-和-bind"><a href="#call-和-bind" class="headerlink" title="call 和 bind"></a>call 和 bind</h2><p>## </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/19/AMD和CMD规范/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-19T16:54:24+08:00" content="2017-09-19">
+              2017-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: AMD和CMD规范<br>tags: </p>
+<h2 id="categories"><a href="#categories" class="headerlink" title="categories: "></a>categories: </h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[require.js的用法] <a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a></p>
+<h2 id="Sea-js-和-Require-js"><a href="#Sea-js-和-Require-js" class="headerlink" title="Sea.js 和 Require.js"></a>Sea.js 和 Require.js</h2><p>// CMD 对于依赖的模块,CMD 是延迟执行<br>define(function(require, exports, module) {<br>    var a = require(‘./a’)<br>    a.doSomething()<br>    // …<br>    var b = require(‘./b’) // 依赖可以就近书写<br>    b.doSomething()<br>    // …<br>})</p>
+<p>// AMD 对于依赖的模块,AMD 是提前执行<br>define([‘./a’, ‘./b’], function(a, b) { // 依赖必须一开始就写好<br>    a.doSomething()<br>    // …<br>    b.doSomething()<br>    // …<br>})</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/18/jQuery-cookie/" itemprop="url">
+                  jQuery插件--cookie使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-18T17:45:06+08:00" content="2017-09-18">
+              2017-09-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jQuery插件/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery插件</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="赋值操作"><a href="#赋值操作" class="headerlink" title="赋值操作"></a>赋值操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.cookie(&quot;the_cookie&quot;,&quot;the_value&quot;,&#123;</div><div class="line">    expiers: 7,</div><div class="line">    path: &quot;/&quot; ,</div><div class="line">    domain: &quot;jQuery.com&quot;,</div><div class="line">    secure: ture  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>the_value 必须是字符串</p>
+<p>$(“the_key”)取到的值也是字符串</p>
+<ul>
+<li>字符串转json—–JSON.parse()</li>
+<li>json转字符串—–JSON.stringify()</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/18/Ajax错误解决方法/" itemprop="url">
+                  Ajax错误解决方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-18T08:43:25+08:00" content="2017-09-18">
+              2017-09-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">Ajax</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jQuery中Ajax运行bug及其解决方案"><a href="#jQuery中Ajax运行bug及其解决方案" class="headerlink" title="jQuery中Ajax运行bug及其解决方案"></a>jQuery中Ajax运行bug及其解决方案</h2><ul>
+<li>form标签中表单元素无name属性，或者name属性名和后端接口文档要求不一致</li>
+<li>url和后端接口文档要求不一致</li>
+<li>data数据传参和后端接口文档要求不一致</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/09/17/正则表达式/" itemprop="url">
                   正则表达式
                 </a>
@@ -470,106 +1222,6 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/16/更改Mac电脑中指定文件的权限/" itemprop="url">
-                  更改Mac电脑指定文件的额权限
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-16T17:53:36+08:00" content="2017-09-16">
-              2017-09-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>数字类型改变档案权限</p>
-<p>linux档案的基本权限就有九个，分别是owner/group/others三种身份各有自己的read/write/execute权限。这九个权限是三个三个一组的。其中，我们可以使用数字来代表各个权限，各个权限的分数对照表如下：</p>
-<p>r:4<br>w:2<br>x:1</p>
-<p>每种身份（owner/group/others）各自的三个权限分数是需要累计的，例如当权限为: [-rwxrwx—] 分数则是:</p>
-<p>owner = rwx = 4+2+1 = 7<br>group = rwx = 4+2+1 = 7<br>others= — = 0+0+0 = 0</p>
-<p>所以我们设定权限的变更时，该档案的权限数字就是770了。</p>
-<p>语法：<br>chmod -R 770 档案或目录<br>解释：<br>-R 进行递归的持续变更，亦即连同次目录下的所有档案都会变更</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2017/09/15/git/" itemprop="url">
                   git和github进行代码管理(Mac电脑)
                 </a>
@@ -701,780 +1353,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/15/阴阳师图集/" itemprop="url">
-                  图集--美呆
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-15T23:32:01+08:00" content="2017-09-15">
-              2017-09-15
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="../img/beauty/23103K3MK.jpg"><br><img src="../img/beauty/boy1.jpeg"><br><img src="../img/beauty/girl1.jpeg"><br><img src="../img/beauty/animal1.jpeg"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/15/linux常用命令/" itemprop="url">
-                  Linux常用命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-15T09:51:09+08:00" content="2017-09-15">
-              2017-09-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="命令行概述"><a href="#命令行概述" class="headerlink" title="命令行概述"></a>命令行概述</h2><p>运行环境：</p>
-<ul>
-<li>dos(windows)</li>
-<li>shell(Linux、Unix、Mac)</li>
-</ul>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
-<li>pwd (Print Working Directory) 查看当前目录</li>
-<li>cd (Change Directory) 切换目录，如 cd /etc  cd .. 返回上一级目录</li>
-<li>ls (List) 查看当前目录下内容，如 ls -al</li>
-<li>mkdir (Make Directory) 创建目录，如 mkdir blog</li>
-<li>touch 创建文件，如 touch index.html</li>
-<li>cat 查看文件全部内容，如 cat index.html</li>
-<li>less 查看文件，如more /etc/passwd、less /etc/passwd</li>
-<li>rm (remove) 删除文件，如 rm index.html、rm -rf(强制删除)  blog</li>
-<li>rmdir (Remove Directory) 删除文件夹，只能删除空文件夹，不常用</li>
-<li>mv (move) 移动文件或重命名，如 mv index.html ./demo/index.html</li>
-<li>cp (copy) 复制文件，cp index.html ./demo/index.html</li>
-<li>tab 自动补全，连按两次会将所有匹配内容显示出来</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/14/版本管理github和码云/" itemprop="url">
-                  利用github和码云进行代码管理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-14T08:34:23+08:00" content="2017-09-14">
-              2017-09-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/代码管理/" itemprop="url" rel="index">
-                    <span itemprop="name">代码管理</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h2 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h2><h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><p>hexo 是一个静态博客生成器，能帮你一个命名生成一个网站。</p>
-<ol>
-<li>安装 node 环境</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- nodejs.org 网站有 node 的下载链接</div><div class="line">- 下载得到安装包</div><div class="line">- 下一步下一步安装即可</div></pre></td></tr></table></figure>
-<p>确认机器上是或否有 node 环境：</p>
-<p>打开 cmd：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure>
-<ol>
-<li>安装 git</li>
-</ol>
-<ol>
-<li>安装 hexo</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli --global</div></pre></td></tr></table></figure>
-<p>接下来可以通过 <code>hexo --version</code> 命令查看是否安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">hexo-cli: 1.0.3</div><div class="line">os: Windows_NT 10.0.14393 win32 x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 7.10.0</div><div class="line">v8: 5.5.372.43</div><div class="line">uv: 1.11.0</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">modules: 51</div><div class="line">openssl: 1.0.2k</div><div class="line">icu: 58.2</div><div class="line">unicode: 9.0</div><div class="line">cldr: 30.0.3</div><div class="line">tz: 2016j</div></pre></td></tr></table></figure>
-<ol>
-<li>生成博客</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># hexo 会帮你在执行该命名所处的目录生成一个指定名称的目录文件</span></div><div class="line">hexo init 博客目录名称</div></pre></td></tr></table></figure>
-<ol>
-<li>启动预览博客</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
-<ol>
-<li>注册 github 账号</li>
-</ol>
-<ul>
-<li><a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></li>
-<li>注册页面：<a href="https://github.com/join" target="_blank" rel="external">https://github.com/join</a></li>
-<li>填入用户名、密码、邮箱</li>
-<li>然后在自己的邮箱中收取邮件激活验证</li>
-</ul>
-<ol>
-<li>创建一个具名的仓库</li>
-</ol>
-<p>到这里一定要确保你的邮箱经过验证了。</p>
-<p>点击右上角的：+ 选择 -&gt; create repository</p>
-<p>起名：注册github时候的用户名.github.io</p>
-<ol>
-<li>把博客发布托管到 github 上</li>
-</ol>
-<p>线上码云示例：</p>
-<ol>
-<li>注册码云账号</li>
-<li>创建仓库（不要初始化 README）</li>
-<li>拿到仓库地址 <a href="https://git.oschina.net/lpzdemayun/lpzdemayun.git" target="_blank" rel="external">https://git.oschina.net/lpzdemayun/lpzdemayun.git</a></li>
-</ol>
-<p>本地操作准备：</p>
-<p>在 <code>_config.yml</code> 中加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://码云账号:码云登录密码@git.oschina.net/lpzdemayun/lpzdemayun.git</div></pre></td></tr></table></figure>
-<p>然后安装一个用来快速发布的工具：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>然后：执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
-<p>推送成功之后，来到线上仓库，找到 服务 -&gt; Pages -&gt; 开启服务</p>
-<p>然后他会告诉你访问哪个地址就可以了。</p>
-<p>接下来你只需要写你的文章，每次发布的时候敲一个命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 先生成目录结构，然后发布</span></div><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure>
-<h2 id="搭建总结"><a href="#搭建总结" class="headerlink" title="搭建总结"></a>搭建总结</h2><p>本地的操作：</p>
-<ul>
-<li>安装 node 环境</li>
-<li>安装 git</li>
-<li>安装 hexo<ul>
-<li><code>npm install --global hexo-cli</code></li>
-</ul>
-</li>
-<li>在本地生成博客<ul>
-<li><code>hexo init 博客目录名称</code></li>
-</ul>
-</li>
-<li>在本地开启预览服务<ul>
-<li><code>hexo server</code></li>
-</ul>
-</li>
-</ul>
-<p>准备码云线上仓库：</p>
-<ul>
-<li>注册码云账号<ul>
-<li>注意：需要单独验证邮箱</li>
-</ul>
-</li>
-<li>创建一个仓库<ul>
-<li>仓库的名字随便起</li>
-</ul>
-</li>
-<li>在仓库页面找到 服务 -&gt; Pages<ul>
-<li>选择启动服务</li>
-</ul>
-</li>
-<li>拿到仓库地址<ul>
-<li><a href="https://git.oschina.net/码云用户名/码云用户名.git" target="_blank" rel="external">https://git.oschina.net/码云用户名/码云用户名.git</a></li>
-</ul>
-</li>
-</ul>
-<p>准备发布工作：</p>
-<ul>
-<li>在本地安装发布工具<ul>
-<li><code>npm install hexo-deployer-git --save</code></li>
-</ul>
-</li>
-<li>修改 <code>_config.yml</code> 文件，加入</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">注意：下面的字段右边是半角的 : 右边带一个空格</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://码云账号:码云登录密码@git.oschina.net/lpzdemayun/lpzdemayun.git</div></pre></td></tr></table></figure>
-<p>最后：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure>
-<p>接下来，直接访问：</p>
-<p><a href="http://码云用户名.oschina.io" target="_blank" rel="external">http://码云用户名.oschina.io</a></p>
-<p>上面的过程处理完之后，以后每次写完文章想要发布，直接打开命令行，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure>
-<p>即可。</p>
-<p>lipengzhou@itcast.cn</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/14/比较特色的样式布局/" itemprop="url">
-                  比较特色的样式布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-14T08:26:01+08:00" content="2017-09-14">
-              2017-09-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？"><a href="#在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？" class="headerlink" title="在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？"></a>在不同屏幕尺寸的设备，始终保持文字只显示两行，超出两行则显示省略号？</h2><p>word-break: break-all; //在恰当的断字点进行换行<br>-webkit-line-clamp:2; //限制一个块元素显示文本的行数<br>display: -webkit-box; //将对象作为一个弹性伸缩盒模型显示<br>-webkit-box-orient: vertical; //设置检索伸缩盒对象子元素排列方式</p>
-<h2 id="只显示一行，超出部分显示省略号"><a href="#只显示一行，超出部分显示省略号" class="headerlink" title="只显示一行，超出部分显示省略号"></a>只显示一行，超出部分显示省略号</h2><p>overflow:hidden;<br>text-overflow:ellipsis;<br>white-space: nowrap;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/14/inherit/" itemprop="url">
-                  继承学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-14T08:19:55+08:00" content="2017-09-14">
-              2017-09-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h2><h2 id="构造函数继承"><a href="#构造函数继承" class="headerlink" title="构造函数继承"></a>构造函数继承</h2><h2 id="组合继承（推荐）"><a href="#组合继承（推荐）" class="headerlink" title="组合继承（推荐）"></a>组合继承（推荐）</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/13/test/" itemprop="url">
-                  学习记录
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-13T17:57:54+08:00" content="2017-09-13">
-              2017-09-13
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1515,7 +1398,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1532,7 +1415,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
